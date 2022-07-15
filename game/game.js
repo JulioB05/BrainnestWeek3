@@ -74,7 +74,7 @@ function game() {
 
     }
 
-    console.log(countWins, countLose, countTie);
+    console.log(countWins, countLose, countTie)
 
     if (countWins > countLose) {
         console.log("You are the winner of the game!!")
