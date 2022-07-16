@@ -53,11 +53,12 @@ function game() {
     let countWins = 0;
     let countLose = 0;
     let countTie = 0;
+    let rounds = prompt("How many rounds do you want to play?", 0);
+    let numRounds = Number(rounds);
 
-    for (let i = 0; i < 5; i++) {
+    for (let i = 0; i < numRounds; i++) {
         let ronda = i + 1;
         let computerSelection = computerPlay();
-
         let playerSelection = prompt("Enter PAPER/ ROCK/ SCISSORS:", "text");
 
         console.log("Result of round number: " + ronda + " is: " + playRound(computerSelection, playerSelection));
@@ -71,7 +72,6 @@ function game() {
         } else if (result == "NOBODY WINS") {
             countTie = countTie + 1;
         }
-
     }
 
     console.log(countWins, countLose, countTie)
