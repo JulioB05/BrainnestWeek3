@@ -4,11 +4,27 @@ function computerPlay() {
     let randomValue = options[random];
 
     //console.log(randomValue);
-    return randomValue;
+    return (randomValue);
 }
-
 // const computerSelection = computerPlay();
 // let playerSelection = prompt("Enter PAPER/ ROCK/ SCISSORS:", "text");
+
+function playerSelection() {
+    let input = prompt("Enter PAPER/ ROCK/ SCISSORS:", 0);
+    let upInput = input.toUpperCase();
+    let playerSelection = "";
+    if (upInput == "ROCK") {
+        playerSelection = upInput;
+    } else if (upInput == "PAPER") {
+        playerSelection = upInput;
+    } else if (upInput == "SCISSORS") {
+        playerSelection = upInput;
+    } else {
+        console.log("Enter a valid value!")
+        playerSelection = prompt("PLEASE ENTER PAPER/ ROCK/ SCISSORS:", 0).toUpperCase();
+    }
+    return (playerSelection);
+}
 
 function playRound(computerSelection, playerSelection) {
     let upperPlayer = playerSelection.toUpperCase();
@@ -45,7 +61,6 @@ function playRound(computerSelection, playerSelection) {
     }
     return (result);
 }
-
 // console.log("Player selection: " + playerSelection + " and computer selection: " + computerSelection)
 // console.log(playRound(computerSelection, playerSelection));
 
@@ -58,12 +73,14 @@ function game() {
 
     for (let i = 0; i < numRounds; i++) {
         let ronda = i + 1;
+        let nplayerSelection = playerSelection();
         let computerSelection = computerPlay();
-        let playerSelection = prompt("Enter PAPER/ ROCK/ SCISSORS:", "text");
 
-        console.log("Result of round number: " + ronda + " is: " + playRound(computerSelection, playerSelection));
+        console.log("Computer Select: " + computerSelection + " and player select: " + nplayerSelection);
 
-        result = playRound(computerSelection, playerSelection);
+        console.log("Result of round number: " + ronda + " is: " + playRound(computerSelection, nplayerSelection));
+
+        let result = playRound(computerSelection, nplayerSelection);
 
         if (result == "YOU WIN") {
             countWins = countWins + 1;
