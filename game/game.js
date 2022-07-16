@@ -91,7 +91,7 @@ function game() {
         }
     }
 
-    console.log(countWins, countLose, countTie)
+    console.log("Rounds won: " + countWins + " | Lost rounds: " + countLose + " | Tied rounds: " + countTie)
 
     if (countWins > countLose) {
         console.log("You are the winner of the game!!")
